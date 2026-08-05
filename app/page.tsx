@@ -9,10 +9,16 @@ import { solutions } from "@/lib/data/solutions";
 import StatStrip from "@/components/sections/StatStrip";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import ArticleCard from "@/components/content/ArticleCard";
+import PodcastCard from "@/components/content/PodcastCard";
+import { getFeaturedArticles } from "@/lib/data/articles";
+import { getFeaturedEpisodes } from "@/lib/data/podcast";
 
 // PAGE 1 — HOME. Sections map 1:1 to the sitemap doc; fill in real copy
 // per section as it's written. Structure/order is intentionally fixed.
 export default function HomePage() {
+  const featuredArticles = getFeaturedArticles(3);
+  const featuredEpisodes = getFeaturedEpisodes(3);
   return (
     <>
       <Hero
@@ -292,7 +298,12 @@ export default function HomePage() {
             <div className="aspect-[4/5] w-full max-w-[280px] border border-line bg-paper-dim">
               {/* TODO: replace with real portrait — grayscale to match monochrome
             system. Keep aspect-[4/5], border/bg act as placeholder frame. */}
-            <Image src="/images/omobola-adekola.jpeg" alt="Omobola Adekola" width={400} height={500} />
+              <Image
+                src="/images/omobola-adekola.jpeg"
+                alt="Omobola Adekola"
+                width={400}
+                height={500}
+              />
             </div>
 
             <div>
@@ -319,20 +330,74 @@ export default function HomePage() {
       </section>
 
       {/* Section 9 — Featured Insights */}
-      <section className="border-b border-line py-20">
-        <Container>
-          <h2>Featured insights</h2>
-          {/* TODO: latest articles grid — swap in ArticleCard once content exists */}
-        </Container>
-      </section>
+      {featuredArticles.length > 0 && (
+        <section className="border-b border-line py-20">
+          <Container>
+            <div className="flex items-end justify-between gap-6">
+              <div>
+                <p className="meta-label">Trade Intelligence</p>
+                <h2 className="mt-2">Featured insights</h2>
+              </div>
+              <Button
+                href="/trade-intelligence"
+                variant="ghost"
+                className="hidden md:inline-flex"
+              >
+                View all →
+              </Button>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredArticles.map((article) => (
+                <ArticleCard key={article.slug} article={article} />
+              ))}
+            </div>
+
+            <Button
+              href="/trade-intelligence"
+              variant="ghost"
+              className="mt-8 inline-flex md:hidden"
+            >
+              View all →
+            </Button>
+          </Container>
+        </section>
+      )}
 
       {/* Section 10 — Featured Podcast */}
-      <section className="border-b border-line py-20">
-        <Container>
-          <h2>Featured podcast</h2>
-          {/* TODO: latest episodes grid — swap in PodcastCard once content exists */}
-        </Container>
-      </section>
+      {featuredEpisodes.length > 0 && (
+        <section className="border-b border-line py-20">
+          <Container>
+            <div className="flex items-end justify-between gap-6">
+              <div>
+                <p className="meta-label">An AfCFTA Conversation Series</p>
+                <h2 className="mt-2">Featured podcast</h2>
+              </div>
+              <Button
+                href="/podcast"
+                variant="ghost"
+                className="hidden md:inline-flex"
+              >
+                All episodes →
+              </Button>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredEpisodes.map((episode) => (
+                <PodcastCard key={episode.slug} episode={episode} />
+              ))}
+            </div>
+
+            <Button
+              href="/podcast"
+              variant="ghost"
+              className="mt-8 inline-flex md:hidden"
+            >
+              All episodes →
+            </Button>
+          </Container>
+        </section>
+      )}
 
       {/* Section 11 — Newsletter */}
       <NewsletterBanner />

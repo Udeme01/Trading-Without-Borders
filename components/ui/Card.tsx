@@ -25,7 +25,7 @@ export default function Card({ href, eyebrow, title, description, className }: C
         {title}
       </h3>
       {description && (
-        <p className="mt-2 text-sm text-[#001C55] leading-relaxed">{description}</p>
+        <p className="mt-2 text-sm text-[#001C55] group-hover:text-white leading-relaxed">{description}</p>
       )}
     </Link>
   );
