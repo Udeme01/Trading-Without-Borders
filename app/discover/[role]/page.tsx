@@ -11,13 +11,16 @@ export function generateStaticParams() {
   return roles.map((role) => ({ role: role.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { role: string };
-}): Metadata {
-  const role = getRoleBySlug(params.role);
+  params: Promise<{ role: string }>;
+}): Promise<Metadata> {
+  const { role: slug } = await params;
+
+  const role = getRoleBySlug(slug);
   if (!role) return {};
+
   return buildMetadata({
     title: role.label,
     description: role.strapline,
@@ -25,11 +28,15 @@ export function generateMetadata({
   });
 }
 
-// Per-role template: Hero / Challenges / Opportunities / JTBD /
-// Recommended Services / Relevant Resources / Relevant Podcast / Case
-// Studies / CTA — matches the sitemap's "Each role page contains" block.
-export default function RolePage({ params }: { params: { role: string } }) {
-  const role = getRoleBySlug(params.role);
+export default async function RolePage({
+  params,
+}: {
+  params: Promise<{ role: string }>;
+}) {
+  const { role: slug } = await params;
+
+  const role = getRoleBySlug(slug);
+
   if (!role) notFound();
 
   return (
@@ -73,7 +80,9 @@ export default function RolePage({ params }: { params: { role: string } }) {
         <h2>Case studies</h2>
         {/* TODO */}
       </Container>
-      <CTASection headline={`Ready to move forward as a ${role.label.toLowerCase()}?`} />
+      <CTASection
+        headline={`Ready to move forward as a ${role.label.toLowerCase()}?`}
+      />
     </>
   );
 }
