@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -18,8 +18,24 @@ const NAV_LINKS = [
 // a follow-up once Trade Intelligence content exists to search over.
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 150);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-line border-white/5 bg-white backdrop-blur-xl">
+    <header
+      className={`fixed top-0 inset-x-0 z-50 ${isScrolled ? "bg-white shadow-sm backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
+    >
       <Container className="flex items-center justify-between py-6">
         <Link
           href="/"
