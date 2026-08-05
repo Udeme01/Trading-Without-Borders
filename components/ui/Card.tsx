@@ -16,7 +16,7 @@ export default function Card({ href, eyebrow, title, description, className }: C
     <Link
       href={href}
       className={cn(
-        "group block border border-line p-6 transition-colors hover:border-ink hover:bg-[#001C55] rounded-2xl shadow-sm hover:shadow-2xl hover:translate-y-[-8px]",
+        "group block border border-line p-6 transition-colors hover:border-ink hover:bg-[#001C55] rounded-2xl shadow-xs hover:shadow-2xl hover:translate-y-[-8px]",
         className
       )}
     >

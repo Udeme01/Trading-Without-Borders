@@ -19,7 +19,7 @@ const NAV_LINKS = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-line border-white/5 bg-[#FFFFFF] backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-line border-white/5 bg-white/20 backdrop-blur-xl">
       <Container className="flex items-center justify-between py-6">
         <Link
           href="/"
@@ -43,7 +43,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-mono text-xs uppercase tracking-[0.1em] text-black"
+              className="font-mono text-xs uppercase tracking-widest text-black"
             >
               {link.label}
             </Link>
@@ -52,7 +52,7 @@ export default function Header() {
         <Button
           href="/contact"
           variant="primary"
-          className="hidden xl:inline-flex bg-[#001C55] hover:bg-[#001C55]/90 rounded-md"
+          className="hidden xl:inline-flex"
         >
           Book a Strategy Session
         </Button>

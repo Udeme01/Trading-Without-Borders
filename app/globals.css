@@ -1,53 +1,83 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  * {
-    @apply border-line;
-  }
+@theme {
+  --color-ink-20: #a3a3a3;
+  --color-ink-40: #6b6b6b;
+  --color-ink-60: #3d3d3d;
+  --color-ink-80: #1a1a1a;
+  --color-ink: #0a0a0a;
 
-  html {
-    scroll-behavior: smooth;
-  }
+  --color-paper: #fafaf8;
+  --color-paper-dim: #f0efea;
 
-  body {
-    font-feature-settings: "liga" 1, "kern" 1;
-  }
+  --color-line: #deddd6;
 
-  /* Editorial type scale — Fraunces for display, restrained weight steps */
-  h1 {
-    @apply font-display font-semibold text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.98] tracking-[-0.02em];
-  }
-  h2 {
-    @apply font-display font-medium text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.05] tracking-[-0.01em];
-  }
-  h3 {
-    @apply font-display font-medium text-[clamp(1.25rem,2vw,1.75rem)] leading-tight;
-  }
-  p {
-    @apply leading-relaxed;
-  }
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-geist-sans), Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 
-  /* Ticker-style eyebrow/meta labels — the recurring "signature" motif:
-     uppercase mono tags for country / industry / date, echoing trade-data
-     ledgers without leaning on any color. */
-  .meta-label {
-    @apply font-mono uppercase text-xs tracking-[0.14em] text-ink-40;
-  }
+  --container-content: 1200px;
+  --container-prose: 68ch;
 
-  ::selection {
-    @apply bg-ink text-paper;
-  }
+  --radius-none: 0px;
+}
 
-  :focus-visible {
-    outline: 2px solid theme("colors.ink.DEFAULT");
-    outline-offset: 3px;
-  }
+/* Compatibility border color */
+*,
+::before,
+::after,
+::backdrop,
+::file-selector-button {
+  border-color: var(--color-gray-200, currentcolor);
+}
+
+/* Global styles */
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+h1 {
+  @apply font-display font-semibold text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.98] tracking-[-0.02em];
+}
+
+h2 {
+  @apply font-display font-medium text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.05] tracking-[-0.01em];
+}
+
+h3 {
+  @apply font-display font-medium text-[clamp(1.25rem,2vw,1.75rem)] leading-tight;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+.meta-label {
+  @apply font-mono uppercase text-xs tracking-[0.14em] text-ink-40;
+}
+
+::selection {
+  @apply bg-ink text-paper;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

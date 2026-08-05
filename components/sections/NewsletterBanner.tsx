@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 // Trade Intelligence article per the Content Relationship Map.
 export default function NewsletterBanner() {
   return (
-    <section className="border-y border-line bg-ink-80/[0.03] py-16">
+    <section className="border-y border-line bg-ink-80/3 py-16">
       <Container className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
         <div>
           <p className="meta-label">Africa Trade Brief</p>
@@ -16,7 +16,7 @@ export default function NewsletterBanner() {
             type="email"
             required
             placeholder="you@company.com"
-            className="w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus-visible:border-ink"
+            className="w-full border border-line bg-paper px-4 py-3 text-sm outline-hidden focus-visible:border-ink"
           />
           <button
             type="submit"

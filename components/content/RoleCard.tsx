@@ -13,9 +13,9 @@ export default function RoleCard({
   return (
     <Link
       href={`/discover/${role.slug}`}
-      className="group relative block border border-line p-5 transition-colors hover:bg-[#001C55] rounded-2xl shadow-sm hover:shadow-2xl hover:translate-y-[-8px]"
+      className="group relative block border border-line p-5 transition-colors hover:bg-[#001C55] rounded-2xl shadow-xs hover:shadow-2xl hover:translate-y-[-8px]"
     >
-      <span className="meta-label text-black/60 group-hover:!text-paper/45">
+      <span className="meta-label text-black/60 group-hover:text-paper/45!">
         {String(index + 1).padStart(2, "0")}
       </span>
       <ArrowUpRight

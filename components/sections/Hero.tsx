@@ -20,9 +20,9 @@ export default function Hero({
   secondaryCta,
 }: HeroProps) {
   return (
-    <section className="border-b border-line min-h-[95vh] flex items-center py-20 bg-gradient-to-b from-blue-[#001C55] to-blue-100">
+    <section className="border-b border-line min-h-[95vh] flex items-center py-20 bg-linear-45 from-blue-700 to-blue-100">
       <Container>
-        {eyebrow && <p className="meta-label mb-4 text-white">{eyebrow}</p>}
+        {eyebrow && <p className="meta-label mb-4">{eyebrow}</p>}
         <h1 className="max-w-4xl font-bold text-3xl md:text-6xl text-white">
           {headline}
         </h1>

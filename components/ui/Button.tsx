@@ -17,7 +17,7 @@ export default function Button({
   className,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center gap-2 px-6 py-3 font-mono uppercase text-xs tracking-[0.12em] transition-colors";
+    "items-center gap-2 px-6 py-3 font-mono uppercase text-xs tracking-[0.12em] transition-colors";
 
   const variants = {
     primary: "bg-[#001C55] text-paper hover:bg-[#001C55]/90 rounded-md",

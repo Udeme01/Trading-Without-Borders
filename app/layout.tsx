@@ -51,7 +51,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-paper text-ink font-sans antialiased">
+      <body className="bg-transparent text-ink font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

@@ -16,7 +16,7 @@ export default function HomePage() {
       <Hero
         eyebrow={
           <>
-            Trading{" "}
+            <span className="text-white">Trading </span>
             <span className="text-[#001C55] font-bold">Without Borders</span>
           </>
         }
@@ -223,8 +223,63 @@ export default function HomePage() {
       {/* Section 7 — Why Trading Without Borders? */}
       <section className="border-b border-line py-20">
         <Container>
-          <h2>Why Trading Without Borders.</h2>
-          {/* TODO: brand philosophy, credibility, differentiators */}
+          <p className="meta-label">Why Trading Without Borders</p>
+          <h2 className="mt-2 max-w-2xl">
+            Trade advice is easy to find. Trade advice built on both law and
+            deals is not.
+          </h2>
+          <p className="mt-6 max-w-prose text-ink-60">
+            Most AfCFTA commentary stops at explaining the framework. Trading
+            Without Borders exists to close the gap between understanding AfCFTA
+            and actually structuring a compliant, defensible move inside it —
+            advisory grounded in practicing trade law, not just writing about
+            it.
+          </p>
+
+          <div className="mt-14">
+            <p className="meta-label mb-4">Credibility</p>
+            <StatStrip
+              stats={[
+                {
+                  value: "~20 yrs",
+                  label: "In trade law & corporate advisory",
+                },
+                { value: "110+", label: "AfCFTA podcast episodes" },
+                { value: "54", label: "Countries covered under AfCFTA" },
+                { value: "M.CIoD", label: "Chartered governance credential" },
+              ]}
+            />
+          </div>
+
+          <div className="mt-14 grid gap-10 md:grid-cols-3">
+            <div>
+              <span className="meta-label">01</span>
+              <h3 className="mt-3">Law and trade strategy, one practice</h3>
+              <p className="mt-2 text-sm text-ink-60">
+                Most advisors are either lawyers or trade consultants, rarely
+                both. Structuring, compliance, and negotiation come from the
+                same source — nothing gets lost in a handoff between them.
+              </p>
+            </div>
+            <div>
+              <span className="meta-label">02</span>
+              <h3 className="mt-3">AfCFTA-specific, not generalist</h3>
+              <p className="mt-2 text-sm text-ink-60">
+                A dedicated podcast and practice built around one framework, not
+                Africa-market advisory in general — depth over breadth on the
+                agreement that actually determines your entry terms.
+              </p>
+            </div>
+            <div>
+              <span className="meta-label">03</span>
+              <h3 className="mt-3">Built on real transactions</h3>
+              <p className="mt-2 text-sm text-ink-60">
+                Advisory grounded in an active corporate and commercial
+                transactions practice — not a theoretical framework, a record of
+                deals actually structured and closed.
+              </p>
+            </div>
+          </div>
         </Container>
       </section>
 
