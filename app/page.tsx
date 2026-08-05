@@ -7,6 +7,8 @@ import Container from "@/components/ui/Container";
 import { roles } from "@/lib/data/roles";
 import { solutions } from "@/lib/data/solutions";
 import StatStrip from "@/components/sections/StatStrip";
+import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 // PAGE 1 — HOME. Sections map 1:1 to the sitemap doc; fill in real copy
 // per section as it's written. Structure/order is intentionally fixed.
@@ -286,14 +288,33 @@ export default function HomePage() {
       {/* Section 8 — Meet Omobola Adekola */}
       <section className="border-b border-line py-20">
         <Container>
-          <p className="meta-label">Your guide</p>
-          <h2 className="mt-2">Meet Omobola Adekola</h2>
-          <p className="mt-4 max-w-prose text-ink-60">
-            Nearly two decades navigating international trade, corporate
-            governance, and cross-border transactions across Africa — the person
-            behind the AfCFTA strategy that gets deals done.
-          </p>
-          {/* TODO: refine positioning copy — keep it a guide statement, not a biography */}
+          <div className="grid gap-10 md:grid-cols-[minmax(0,280px)_1fr] md:items-start">
+            <div className="aspect-[4/5] w-full max-w-[280px] border border-line bg-paper-dim">
+              {/* TODO: replace with real portrait — grayscale to match monochrome
+            system. Keep aspect-[4/5], border/bg act as placeholder frame. */}
+            <Image src="/images/omobola-adekola.jpeg" alt="Omobola Adekola" width={400} height={500} />
+            </div>
+
+            <div>
+              <p className="meta-label">Your guide</p>
+              <h2 className="mt-2">Meet Omobola Adekola</h2>
+              <p className="mt-6 max-w-prose text-lg text-ink-60">
+                She's seen a good deal die in a compliance gap nobody caught
+                early enough — and watched others move through the same
+                conditions cleanly, because someone knew exactly where to look.
+                Trading Without Borders exists so you don't have to learn AfCFTA
+                the expensive way.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button href="/contact" variant="primary">
+                  Book a Strategy Session
+                </Button>
+                <Button href="/podcast" variant="ghost">
+                  Listen to the podcast
+                </Button>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 

@@ -19,7 +19,7 @@ const NAV_LINKS = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-line border-white/5 bg-white/20 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-line border-white/5 bg-white backdrop-blur-xl">
       <Container className="flex items-center justify-between py-6">
         <Link
           href="/"
