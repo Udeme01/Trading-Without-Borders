@@ -11,13 +11,15 @@ export function generateStaticParams() {
   return solutions.map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const solution = getSolutionBySlug(params.slug);
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const solution = getSolutionBySlug(slug);
   if (!solution) return {};
+
   return buildMetadata({
     title: solution.title,
     description: solution.problem || solution.title,
@@ -25,10 +27,14 @@ export function generateMetadata({
   });
 }
 
-// Per-solution template: Problem / Why it matters / Our approach /
-// Deliverables / Outcomes / Proof / CTA — matches the sitemap exactly.
-export default function SolutionPage({ params }: { params: { slug: string } }) {
-  const solution = getSolutionBySlug(params.slug);
+export default async function SolutionPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const solution = getSolutionBySlug(slug);
   if (!solution) notFound();
 
   return (
@@ -70,7 +76,9 @@ export default function SolutionPage({ params }: { params: { slug: string } }) {
         <h2>Proof</h2>
         {/* TODO: case studies / testimonials */}
       </Container>
-      <CTASection headline={`Talk to us about ${solution.title.toLowerCase()}.`} />
+      <CTASection
+        headline={`Talk to us about ${solution.title.toLowerCase()}.`}
+      />
     </>
   );
 }

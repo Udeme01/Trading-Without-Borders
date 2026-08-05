@@ -6,28 +6,36 @@ import { buildMetadata } from "@/lib/seo";
 
 // TODO: generateStaticParams() once lib/data/podcast.ts exists.
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { episode: string };
-}): Metadata {
+  params: Promise<{ episode: string }>;
+}): Promise<Metadata> {
+  const { episode } = await params;
+
+
   return buildMetadata({
-    title: params.episode.replace(/-/g, " "),
+    title: episode.replace(/-/g, " "),
     description: "",
-    path: `/podcast/${params.episode}`,
+    path: `/podcast/${episode}`,
   });
 }
 
 // Every episode contains: Video, Audio, Transcript, Key Insights, Quotes,
 // Resources, Related Articles, Related Solutions, CTA.
-export default function EpisodePage({ params }: { params: { episode: string } }) {
+export default async function EpisodePage({
+  params,
+}: {
+  params: Promise<{ episode: string }>;
+}) {
+  const { episode } = await params;
   return (
     <>
       <Container className="pt-8">
         <Breadcrumbs
           items={[
             { href: "/podcast", label: "Podcast" },
-            { href: `/podcast/${params.episode}`, label: params.episode },
+            { href: `/podcast/${episode}`, label: episode },
           ]}
         />
       </Container>
@@ -47,9 +55,15 @@ export default function EpisodePage({ params }: { params: { episode: string } })
         <h2>Transcript</h2>
       </Container>
       <Container className="grid gap-8 pb-16 md:grid-cols-3">
-        <div><h3>Resources</h3></div>
-        <div><h3>Related articles</h3></div>
-        <div><h3>Related solutions</h3></div>
+        <div>
+          <h3>Resources</h3>
+        </div>
+        <div>
+          <h3>Related articles</h3>
+        </div>
+        <div>
+          <h3>Related solutions</h3>
+        </div>
       </Container>
       <CTASection headline="Want a conversation like this for your team?" />
     </>
