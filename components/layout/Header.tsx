@@ -19,8 +19,8 @@ const NAV_LINKS = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
-      <Container className="flex items-center justify-between py-4">
+    <header className="sticky top-0 z-50 border-b border-line border-white/5 bg-[#FFFFFF] backdrop-blur">
+      <Container className="flex items-center justify-between py-6">
         <Link
           href="/"
           className="font-display text-lg font-semibold tracking-tight text-[#001C55] hover:text-[#001C55]/90"
@@ -43,7 +43,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-mono text-xs uppercase tracking-[0.1em] text-ink-60 hover:text-ink"
+              className="font-mono text-xs uppercase tracking-[0.1em] text-black"
             >
               {link.label}
             </Link>

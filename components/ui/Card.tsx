@@ -16,16 +16,16 @@ export default function Card({ href, eyebrow, title, description, className }: C
     <Link
       href={href}
       className={cn(
-        "group block border border-line p-6 transition-colors hover:border-ink",
+        "group block border border-line p-6 transition-colors hover:border-ink hover:bg-[#001C55] rounded-2xl shadow-sm hover:shadow-2xl hover:translate-y-[-8px]",
         className
       )}
     >
-      {eyebrow && <span className="meta-label">{eyebrow}</span>}
-      <h3 className="mt-2 font-display text-xl leading-snug group-hover:underline underline-offset-4">
+      {eyebrow && <span className="meta-label uppercase text-[10px] text-[#001C55] tracking-[0.14em] group-hover:text-white">{eyebrow}</span>}
+      <h3 className="mt-2 font-display text-xl leading-snug group-hover:underline underline-offset-4 text-[#001C55] group-hover:text-white">
         {title}
       </h3>
       {description && (
-        <p className="mt-2 text-sm text-ink-60 leading-relaxed">{description}</p>
+        <p className="mt-2 text-sm text-[#001C55] leading-relaxed">{description}</p>
       )}
     </Link>
   );
