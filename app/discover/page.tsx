@@ -6,7 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Discover",
-  description: "Choose your role to get a tailored path through Trading Without Borders.",
+  description:
+    "Choose your role to get a tailored path through Trading Without Borders.",
   path: "/discover",
 });
 
@@ -17,8 +18,8 @@ export default function DiscoverPage() {
       <p className="meta-label">Discover</p>
       <h1 className="mt-2">Choose your role.</h1>
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {roles.map((role) => (
-          <RoleCard key={role.slug} role={role} />
+        {roles.map((role, index) => (
+          <RoleCard key={role.slug} role={role} index={index} />
         ))}
       </div>
     </Container>
