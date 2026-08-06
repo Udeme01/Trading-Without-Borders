@@ -156,7 +156,9 @@ export default function HomePage() {
 
           <div className="mt-14 grid grid-cols-1 items-stretch gap-0 md:grid-cols-[1fr_auto_1fr]">
             <div>
-              <p className="mb-4 uppercase text-xs tracking-[0.14em] text-black/70">Before</p>
+              <p className="mb-4 uppercase text-xs tracking-[0.14em] text-black/70">
+                Before
+              </p>
               {[
                 "Watching AfCFTA from the sidelines",
                 "One misstep from stalling a deal",
@@ -179,7 +181,9 @@ export default function HomePage() {
             </div>
 
             <div className="bg-linear-to-b from-[#001C55] to-[#001C55]/80 px-6 rounded-2xl">
-              <p className="pt-4 pb-4 uppercase text-xs tracking-[0.14em] text-white/70">After</p>
+              <p className="pt-4 pb-4 uppercase text-xs tracking-[0.14em] text-white/70">
+                After
+              </p>
               {[
                 "Trading inside a $3.4T single market",
                 "Compliant structures, built to move fast",
@@ -318,7 +322,11 @@ export default function HomePage() {
                 the expensive way.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="/contact" variant="primary">
+                <Button
+                  href="/contact"
+                  variant="primary"
+                  className="text-white"
+                >
                   Book a Strategy Session
                 </Button>
                 <Button href="/podcast" variant="ghost">

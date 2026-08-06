@@ -20,7 +20,7 @@ export default function Button({
     "items-center gap-2 px-6 py-3 font-mono uppercase text-xs tracking-[0.12em] transition-colors";
 
   const variants = {
-    primary: "bg-[#001C55] text-paper hover:bg-[#001C55]/90 rounded-md",
+    primary: "rounded-md bg-[#001C55] hover:bg-[#001C55]/80",
     secondary: "rounded-md outline outline-white text-white hover:bg-[#001C55] hover:outline-[#001C55]",
     ghost: "text-ink underline underline-offset-4 hover:text-ink-60",
   };

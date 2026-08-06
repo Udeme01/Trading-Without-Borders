@@ -34,7 +34,7 @@ export default function Hero({
         {(primaryCta || secondaryCta) && (
           <div className="mt-10 flex flex-wrap gap-4">
             {primaryCta && (
-              <Button href={primaryCta.href} variant="primary">
+              <Button href={primaryCta.href} variant="primary" className="text-white">
                 {primaryCta.label}
               </Button>
             )}

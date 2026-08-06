@@ -59,7 +59,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-mono text-xs uppercase tracking-widest ${isScrolled ? "text-[#001C55]" : "text-white"}`}
+              className={`font-mono text-[12px] uppercase tracking-widest ${isScrolled ? "text-[#001C55]" : "text-white/50 hover:text-white"}`}
             >
               {link.label}
             </Link>
@@ -68,7 +68,7 @@ export default function Header() {
         <Button
           href="/contact"
           variant="primary"
-          className="hidden xl:inline-flex"
+          className={`hidden xl:inline-flex ${isScrolled ? "bg-[#001C55] text-white" : "bg-white text-[#001C55] hover:bg-white/80"}`}
         >
           Book a Strategy Session
         </Button>

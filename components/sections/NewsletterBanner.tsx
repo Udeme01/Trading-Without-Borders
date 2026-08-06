@@ -24,7 +24,7 @@ export default function NewsletterBanner() {
           />
           <button
             type="submit"
-            className="bg-white text-black px-5 py-3 font-mono text-xs uppercase tracking-[0.12em] hover:bg-white/20 hover:text-white rounded-md"
+            className="bg-white text-[#001C55] px-5 py-3 font-mono text-xs uppercase tracking-[0.12em] hover:bg-white/80 rounded-md"
           >
             Subscribe
           </button>

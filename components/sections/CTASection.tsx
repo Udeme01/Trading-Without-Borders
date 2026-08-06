@@ -15,7 +15,7 @@ export default function CTASection({
       <Container>
         <h2 className="mx-auto max-w-2xl">{headline}</h2>
         <div className="mt-8">
-          <Button href={cta.href} variant="primary">
+          <Button href={cta.href} variant="primary" className="text-white">
             {cta.label}
           </Button>
         </div>
