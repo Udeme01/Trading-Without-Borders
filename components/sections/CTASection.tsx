@@ -11,7 +11,7 @@ export default function CTASection({
   cta?: { href: string; label: string };
 }) {
   return (
-    <section className="border-t border-line py-20 text-center">
+    <section className="border-t border-line py-40 text-center">
       <Container>
         <h2 className="mx-auto max-w-2xl">{headline}</h2>
         <div className="mt-8">

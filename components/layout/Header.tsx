@@ -22,7 +22,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 150);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,12 +34,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 ${isScrolled ? "bg-white shadow-sm backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
+      className={`fixed top-0 inset-x-0 z-50 ${isScrolled ? "bg-white shadow-2xl backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
     >
       <Container className="flex items-center justify-between py-6">
         <Link
           href="/"
-          className="font-display text-lg font-semibold tracking-tight text-[#001C55] hover:text-[#001C55]/90"
+          className={`font-display text-lg font-semibold tracking-tight ${isScrolled ? "text-[#001C55]" : "text-white"}`}
         >
           Trading Without Borders
         </Link>
@@ -50,7 +50,7 @@ export default function Header() {
             toggle={setIsOpen}
             size={20}
             rounded
-            color="#000"
+            color={isScrolled ? "#001C55" : "#FFFFFF"}
           />
         </div>
 
@@ -59,7 +59,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-mono text-xs uppercase tracking-widest text-black"
+              className={`font-mono text-xs uppercase tracking-widest ${isScrolled ? "text-[#001C55]" : "text-white"}`}
             >
               {link.label}
             </Link>

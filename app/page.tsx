@@ -24,8 +24,9 @@ export default function HomePage() {
       <Hero
         eyebrow={
           <>
-            <span className="text-white">Trading </span>
-            <span className="text-[#001C55] font-bold">Without Borders</span>
+            <span className="text-white/50 text-[10px]">
+              Trading Without Borders
+            </span>
           </>
         }
         headline="Africa is open for business. Are you ready to move?"
@@ -79,7 +80,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 3 — The Cost of Standing Still */}
-      <section className="border-b border-line bg-[#001C55] py-24 text-paper">
+      <section className="border-b border-line bg-linear-to-b from-[#001C55] to-[#001C55]/80 py-24 text-paper">
         <Container>
           <p className="meta-label !text-paper/50">
             The cost of standing still
@@ -155,7 +156,7 @@ export default function HomePage() {
 
           <div className="mt-14 grid grid-cols-1 items-stretch gap-0 md:grid-cols-[1fr_auto_1fr]">
             <div>
-              <p className="meta-label mb-4">Before</p>
+              <p className="mb-4 uppercase text-xs tracking-[0.14em] text-black/70">Before</p>
               {[
                 "Watching AfCFTA from the sidelines",
                 "One misstep from stalling a deal",
@@ -164,7 +165,7 @@ export default function HomePage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="border-t border-line py-3 text-sm text-ink-60 last:border-b"
+                  className="border-t border-line py-8 text-xl text-black last:border-b tracking-wider font-thin"
                 >
                   {item}
                 </div>
@@ -177,8 +178,8 @@ export default function HomePage() {
               </span>
             </div>
 
-            <div className="bg-[#001C55] px-6 rounded-2xl">
-              <p className="meta-label !text-paper/50 pt-4 pb-4">After</p>
+            <div className="bg-linear-to-b from-[#001C55] to-[#001C55]/80 px-6 rounded-2xl">
+              <p className="pt-4 pb-4 uppercase text-xs tracking-[0.14em] text-white/70">After</p>
               {[
                 "Trading inside a $3.4T single market",
                 "Compliant structures, built to move fast",
@@ -187,7 +188,7 @@ export default function HomePage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="border-t border-paper/15 py-3 text-sm font-semibold text-paper last:border-b"
+                  className="border-t border-line py-8 text-xl font-thin tracking-wider text-white"
                 >
                   {item}
                 </div>
@@ -202,7 +203,7 @@ export default function HomePage() {
         <Container>
           <p className="meta-label">Choose your journey</p>
           <h2 className="mt-2">Built for where you sit.</h2>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {roles.map((role, index) => (
               <RoleCard key={role.slug} role={role} index={index} />
             ))}
@@ -215,7 +216,7 @@ export default function HomePage() {
         <Container>
           <p className="meta-label">How we move you forward</p>
           <h2 className="mt-2">Solutions</h2>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {solutions.map((solution) => (
               <Card
                 key={solution.slug}
@@ -309,7 +310,7 @@ export default function HomePage() {
             <div>
               <p className="meta-label">Your guide</p>
               <h2 className="mt-2">Meet Omobola Adekola</h2>
-              <p className="mt-6 max-w-prose text-lg text-ink-60">
+              <p className="mt-6 max-w-prose text-md text-ink-60 font-mono">
                 She's seen a good deal die in a compliance gap nobody caught
                 early enough — and watched others move through the same
                 conditions cleanly, because someone knew exactly where to look.
@@ -347,7 +348,7 @@ export default function HomePage() {
               </Button>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {featuredArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />
               ))}
@@ -382,7 +383,7 @@ export default function HomePage() {
               </Button>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {featuredEpisodes.map((episode) => (
                 <PodcastCard key={episode.slug} episode={episode} />
               ))}
