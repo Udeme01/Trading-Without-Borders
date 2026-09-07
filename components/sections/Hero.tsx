@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 interface HeroProps {
   eyebrow?: ReactNode;
@@ -34,7 +35,11 @@ export default function Hero({
         {(primaryCta || secondaryCta) && (
           <div className="mt-10 flex flex-wrap gap-4">
             {primaryCta && (
-              <Button href={primaryCta.href} variant="primary" className="text-white">
+              <Button
+                href={primaryCta.href}
+                variant="primary"
+                className="text-white"
+              >
                 {primaryCta.label}
               </Button>
             )}
@@ -46,6 +51,15 @@ export default function Hero({
           </div>
         )}
       </Container>
+      <Image
+        src="/images/beyond.jpg"
+        alt="hero image"
+        width={1200}
+        height={1200}
+        // fill
+        className="object-cover absolute inset-0 h-full w-full"
+      />
+      <div className="bg-black/50 absolute inset-0" />
     </section>
   );
 }

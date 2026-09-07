@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 ${isScrolled ? "bg-white shadow-2xl backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
+      className={`fixed top-0 inset-x-0 z-100 ${isScrolled ? "bg-white shadow-2xl backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
     >
       <Container className="flex items-center justify-between py-6">
         <Link

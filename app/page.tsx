@@ -13,6 +13,7 @@ import ArticleCard from "@/components/content/ArticleCard";
 import PodcastCard from "@/components/content/PodcastCard";
 import { getFeaturedArticles } from "@/lib/data/articles";
 import { getFeaturedEpisodes } from "@/lib/data/podcast";
+import RoleCarousel from "@/components/content/RoleCarousel";
 
 // PAGE 1 — HOME. Sections map 1:1 to the sitemap doc; fill in real copy
 // per section as it's written. Structure/order is intentionally fixed.
@@ -46,7 +47,7 @@ export default function HomePage() {
             Africa is changing — and the rules are being rewritten from within.
           </h2>
 
-          <div className="mt-10 grid gap-10 md:grid-cols-2">
+          {/* <div className="mt-10 grid gap-10 md:grid-cols-2">
             <p className="max-w-prose text-ink-60">
               For decades, African economies traded more with the rest of the
               world than with each other — held back by fragmented markets,
@@ -54,6 +55,28 @@ export default function HomePage() {
               the continent slower and costlier than shipping them overseas.
             </p>
             <p className="max-w-prose text-ink-60">
+              The African Continental Free Trade Area changes that calculation.
+              It's the largest free trade area in the world by number of
+              countries — a single market built to make Africa trade with itself
+              first, and the businesses positioned early stand to define what
+              that market looks like.
+            </p>
+          </div> */}
+
+          <div className="mt-10 grid gap-12 md:grid-cols-2">
+            <p
+              className="max-w-prose text-ink-60 text-lg tracking-wide [word-spacing:0.01em] py-4"
+              style={{ lineHeight: "2.1rem" }}
+            >
+              For decades, African economies traded more with the rest of the
+              world than with each other — held back by fragmented markets,
+              inconsistent tariffs, and borders that made moving goods across
+              the continent slower and costlier than shipping them overseas.
+            </p>
+            <p
+              className="max-w-prose text-ink-60 text-lg tracking-wide [word-spacing:0.01em] py-4"
+              style={{ lineHeight: "2.1rem" }}
+            >
               The African Continental Free Trade Area changes that calculation.
               It's the largest free trade area in the world by number of
               countries — a single market built to make Africa trade with itself
@@ -71,7 +94,7 @@ export default function HomePage() {
                 { value: "16%", label: "Pre-AfCFTA intra-African trade share" },
               ]}
             />
-            <p className="mt-4 text-xs text-ink-40">
+            <p className="mt-4 text-sm text-ink-40 tracking-wide">
               Compare: intra-regional trade sits at roughly 59% in Asia and 68%
               in Europe — the gap AfCFTA is built to close.
             </p>
@@ -206,11 +229,9 @@ export default function HomePage() {
       <section className="border-b border-line py-20">
         <Container>
           <p className="meta-label">Choose your journey</p>
-          <h2 className="mt-2">Built for where you sit.</h2>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {roles.map((role, index) => (
-              <RoleCard key={role.slug} role={role} index={index} />
-            ))}
+          <h2 className="mt-2">Find your position.</h2>
+          <div className="mt-10">
+            <RoleCarousel roles={roles} />
           </div>
         </Container>
       </section>

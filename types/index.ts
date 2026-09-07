@@ -7,6 +7,13 @@ export interface Role {
   opportunities: string[];
   jtbd: string[]; // jobs to be done
   recommendedSolutionSlugs: string[];
+  // add these ↓
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+  description?: string;
+  ctaLabel?: string;
+  image?: string;
 }
 
 export interface Solution {
