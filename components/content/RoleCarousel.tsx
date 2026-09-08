@@ -193,7 +193,7 @@ function RoleCarouselCard({
 function ActiveCardContent({ role }: { role: Role }) {
   return (
     <div className="relative z-10 flex h-full flex-col justify-between p-6 md:p-8">
-      <div className="ml-auto flex h-full w-full flex-col justify-between rounded-xl bg-white/55 p-6 backdrop-blur-sm md:w-[60%] md:p-8">
+      <div className="ml-auto flex h-full w-[60%] flex-col justify-between rounded-xl bg-white/55 p-6 backdrop-blur-sm md:w-[60%] md:p-8">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-black/70">
             {role.eyebrow}
