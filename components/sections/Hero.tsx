@@ -52,11 +52,12 @@ export default function Hero({
         )}
       </Container>
       <Image
-        src="/images/beyond.jpg"
+        src="/images/africa01.jpg"
         alt="hero image"
         width={1200}
         height={1200}
         // fill
+        unoptimized
         className="object-cover absolute inset-0 h-full w-full"
       />
       <div className="bg-black/50 absolute inset-0" />

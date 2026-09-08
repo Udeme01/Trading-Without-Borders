@@ -17,7 +17,7 @@ export const roles: Role[] = [
     description:
       "I see the opportunity. I need clarity on the right market, the right structure, and the right move.",
     ctaLabel: "Help me make my first move",
-    image: "/images/roles/founder0.jpg",
+    image: "/images/roles/build.jpg",
   },
 
   {
@@ -35,7 +35,7 @@ export const roles: Role[] = [
     description:
       "My business is already moving. I need the intelligence to make continental decisions with confidence.",
     ctaLabel: "Help me shape the strategy",
-    image: "/images/roles/executive.jpg",
+    image: "/images/roles/executive0.jpg",
   },
   {
     slug: "investor",
@@ -53,7 +53,7 @@ export const roles: Role[] = [
     description:
       "The numbers look promising. I need to understand the market, the risks, and what lies beneath the opportunity.",
     ctaLabel: "Give me the intelligence",
-    image: "/images/roles/investor01.jpg",
+    image: "/images/roles/investor00.jpg",
   },
   {
     slug: "government",

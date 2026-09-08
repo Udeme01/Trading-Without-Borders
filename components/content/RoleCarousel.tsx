@@ -173,7 +173,7 @@ function RoleCarouselCard({
       }`}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-contain bg-left bg-no-repeat"
         style={{
           backgroundImage: `url(${role.image ?? ""})`,
           backgroundColor: "#001C55",
@@ -193,19 +193,19 @@ function RoleCarouselCard({
 function ActiveCardContent({ role }: { role: Role }) {
   return (
     <div className="relative z-10 flex h-full flex-col justify-between p-6 md:p-8">
-      <div className="ml-auto flex h-full w-full flex-col justify-between rounded-xl bg-black/55 p-6 backdrop-blur-sm md:w-[60%] md:p-8">
+      <div className="ml-auto flex h-full w-full flex-col justify-between rounded-xl bg-white/55 p-6 backdrop-blur-sm md:w-[60%] md:p-8">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-black/70">
             {role.eyebrow}
           </p>
-          <div className="mt-3 h-px w-8 bg-white/40" />
-          <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-white md:text-3xl">
+          <div className="mt-3 h-px w-8 bg-black/40" />
+          <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-black md:text-3xl">
             {role.heading}
           </h3>
-          <p className="mt-2 font-display text-lg italic text-white/80">
+          <p className="mt-2 font-display text-lg italic text-black/80">
             {role.subheading}
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-white/70">
+          <p className="mt-4 text-sm leading-relaxed text-black/70">
             {role.description}
           </p>
         </div>

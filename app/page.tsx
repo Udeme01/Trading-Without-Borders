@@ -241,13 +241,14 @@ export default function HomePage() {
         <Container>
           <p className="meta-label">How we move you forward</p>
           <h2 className="mt-2">Solutions</h2>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-10 overflow-visible px-4 sm:grid-cols-2 sm:gap-16 sm:px-8">
             {solutions.map((solution) => (
               <Card
                 key={solution.slug}
                 href={`/solutions/${solution.slug}`}
                 eyebrow={solution.category}
                 title={solution.title}
+                ctaLabel="Explore this solution"
               />
             ))}
           </div>
@@ -320,15 +321,15 @@ export default function HomePage() {
       {/* Section 8 — Meet Omobola Adekola */}
       <section className="border-b border-line py-20">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[minmax(0,280px)_1fr] md:items-start">
-            <div className="aspect-[4/5] w-full max-w-[280px] border border-line bg-paper-dim">
-              {/* TODO: replace with real portrait — grayscale to match monochrome
-            system. Keep aspect-[4/5], border/bg act as placeholder frame. */}
+          <div className="grid gap-10 md:grid-cols-[minmax(0,380px)_1fr] md:items-start">
+            <div className="relative aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-2xl border border-line bg-paper-dim">
               <Image
                 src="/images/omobola-adekola.jpeg"
                 alt="Omobola Adekola"
-                width={400}
-                height={500}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 380px, 100vw"
+                priority
               />
             </div>
 
