@@ -11,7 +11,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Role } from "@/types";
 
-const ACTIVE_SCALE = 2.1; // how much wider the active card is vs inactive
+const ACTIVE_SCALE = 1.37; // how much wider the active card is vs inactive
 const ACTIVE_HEIGHT = 480;
 const INACTIVE_HEIGHT = 340;
 const CARD_GAP = 24;
@@ -193,7 +193,7 @@ function RoleCarouselCard({
 function ActiveCardContent({ role }: { role: Role }) {
   return (
     <div className="relative z-10 flex h-full flex-col justify-between p-6 md:p-8">
-      <div className="ml-auto flex h-full w-[60%] flex-col justify-between rounded-xl bg-white/55 p-6 backdrop-blur-sm md:w-[60%] md:p-8">
+      <div className="ml-auto flex h-full w-[80%] flex-col justify-between rounded-xl bg-white/40 p-6 backdrop-blur-sm sm:w-[70%] md:w-[60%] md:p-8">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-black/70">
             {role.eyebrow}
@@ -205,7 +205,7 @@ function ActiveCardContent({ role }: { role: Role }) {
           <p className="mt-2 font-display text-lg italic text-black/80">
             {role.subheading}
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-black/70">
+          <p className="mt-4 text-[12px] leading-relaxed text-black/70">
             {role.description}
           </p>
         </div>
