@@ -25,6 +25,8 @@ export interface Solution {
   approach: string[];
   deliverables: string[];
   outcomes: string[];
+  iconSrc: string;
+  // relatedRoleSlugs: string[];
 }
 
 export interface Article {

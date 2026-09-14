@@ -177,49 +177,52 @@ export default function HomePage() {
             Not just compliant. Positioned to move first.
           </h2>
 
-          <div className="mt-14 grid grid-cols-1 items-stretch gap-0 md:grid-cols-[1fr_auto_1fr]">
-            <div>
-              <p className="mb-4 uppercase text-xs tracking-[0.14em] text-black/70">
-                Before
-              </p>
-              {[
-                "Watching AfCFTA from the sidelines",
-                "One misstep from stalling a deal",
-                "Guessing which market to enter",
-                "Reacting to regulation",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="border-t border-line py-8 text-xl text-black last:border-b tracking-wider font-thin"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
+          {/* Shared wrapper: this is what keeps Before/After as one module on mobile */}
+          <div className="mt-14 rounded-2xl border border-line bg-black/[0.02] p-4 md:p-8">
+            <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-0">
+              <div>
+                <p className="mb-4 uppercase text-xs tracking-[0.14em] text-black font-semibold">
+                  Before
+                </p>
+                {[
+                  "Watching AfCFTA from the sidelines",
+                  "One misstep from stalling a deal",
+                  "Guessing which market to enter",
+                  "Reacting to regulation",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="border-t border-line py-8 text-xl text-black last:border-b tracking-wider font-thin"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
 
-            <div className="flex items-center justify-center px-6 py-8 text-ink-20 md:py-0">
-              <span aria-hidden className="text-lg">
-                →
-              </span>
-            </div>
+              <div className="flex items-center justify-center text-ink-20">
+                <span aria-hidden className="rotate-90 text-lg md:rotate-0">
+                  →
+                </span>
+              </div>
 
-            <div className="bg-linear-to-b from-[#001C55] to-[#001C55]/80 px-6 rounded-2xl">
-              <p className="pt-4 pb-4 uppercase text-xs tracking-[0.14em] text-white/70">
-                After
-              </p>
-              {[
-                "Trading inside a $3.4T single market",
-                "Compliant structures, built to move fast",
-                "Intelligence-backed entry, sector by sector",
-                "Anticipating regulation, ahead of the curve",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="border-t border-line py-8 text-xl font-thin tracking-wider text-white"
-                >
-                  {item}
-                </div>
-              ))}
+              <div className="rounded-xl bg-linear-to-b from-[#001C55] to-[#001C55]/80 px-6 py-2 md:py-0">
+                <p className="pb-4 pt-4 uppercase text-xs tracking-[0.14em] text-white font-semibold">
+                  After
+                </p>
+                {[
+                  "Trading inside a $3.4T single market",
+                  "Compliant structures, built to move fast",
+                  "Intelligence-backed entry, sector by sector",
+                  "Anticipating regulation, ahead of the curve",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="border-t border-white/20 py-8 text-xl font-thin tracking-wider text-white last:border-b"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
@@ -249,6 +252,7 @@ export default function HomePage() {
                 eyebrow={solution.category}
                 title={solution.title}
                 ctaLabel="Explore this solution"
+                image={{ src: solution.iconSrc, alt: solution.title }}
               />
             ))}
           </div>
@@ -378,7 +382,7 @@ export default function HomePage() {
               </Button>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="mt-10 grid grid-cols-1 gap-10 overflow-visible px-4 sm:grid-cols-2 sm:px-8">
               {featuredArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />
               ))}
@@ -413,7 +417,7 @@ export default function HomePage() {
               </Button>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2">
               {featuredEpisodes.map((episode) => (
                 <PodcastCard key={episode.slug} episode={episode} />
               ))}
