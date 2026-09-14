@@ -18,7 +18,7 @@ const fraunces = Fraunces({
   style: ["normal", "italic"],
 });
 
-const SITE_URL = "https://www.tradingwithoutborders.com"; // update before launch
+const SITE_URL = "https://www.tradingwithoutborders.com"; // to be updated before launch
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
