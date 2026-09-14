@@ -2,7 +2,6 @@ import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
 import NewsletterBanner from "@/components/sections/NewsletterBanner";
 import Card from "@/components/ui/Card";
-import RoleCard from "@/components/content/RoleCard";
 import Container from "@/components/ui/Container";
 import { roles } from "@/lib/data/roles";
 import { solutions } from "@/lib/data/solutions";
@@ -78,7 +77,7 @@ export default function HomePage() {
               style={{ lineHeight: "2.1rem" }}
             >
               The African Continental Free Trade Area changes that calculation.
-              It's the largest free trade area in the world by number of
+              It&apos;s the largest free trade area in the world by number of
               countries — a single market built to make Africa trade with itself
               first, and the businesses positioned early stand to define what
               that market looks like.
@@ -109,8 +108,8 @@ export default function HomePage() {
             The cost of standing still
           </p>
           <h2 className="mt-2 max-w-2xl">
-            Waiting isn't neutral. It's a decision — one your competitors are
-            already making differently.
+            Waiting isn&apos;t neutral. It&apos;s a decision — one your
+            competitors are already making differently.
           </h2>
 
           <div className="mt-16 grid gap-12 md:grid-cols-3">
@@ -119,14 +118,14 @@ export default function HomePage() {
                 01 — Missed Opportunities
               </span>
               <h3 className="mt-3 text-paper">
-                Someone else is signing the deal you're still evaluating.
+                Someone else is signing the deal you&apos;re still evaluating.
               </h3>
               <p className="mt-3 text-sm text-paper/70">
                 AfCFTA is compressing a decade of market-entry advantage into a
                 few years. The businesses building compliant trade structures
-                and partnerships now are the ones who'll hold the relationships
-                and tariff advantages when the rules fully phase in — not the
-                ones still "monitoring the situation."
+                and partnerships now are the ones who&aposll hold the
+                relationships and tariff advantages when the rules fully phase
+                in — not the ones still &quot;monitoring the situation.&quot;
               </p>
             </div>
 
@@ -341,11 +340,11 @@ export default function HomePage() {
               <p className="meta-label">Your guide</p>
               <h2 className="mt-2">Meet Omobola Adekola</h2>
               <p className="mt-6 max-w-prose text-md text-ink-60 font-mono">
-                She's seen a good deal die in a compliance gap nobody caught
-                early enough — and watched others move through the same
+                She&apos;s seen a good deal die in a compliance gap nobody
+                caught early enough — and watched others move through the same
                 conditions cleanly, because someone knew exactly where to look.
-                Trading Without Borders exists so you don't have to learn AfCFTA
-                the expensive way.
+                Trading Without Borders exists so you don&apos;t have to learn
+                AfCFTA the expensive way.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button
