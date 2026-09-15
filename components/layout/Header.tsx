@@ -32,14 +32,44 @@ export default function Header() {
     };
   }, []);
 
+  // Lock body scroll while the mobile menu is open, and always close it
+  // if the viewport grows past the mobile breakpoint (e.g. rotating a
+  // tablet, or resizing a browser window).
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-100 ${isScrolled ? "bg-white shadow-2xl backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
+      className={`fixed top-0 inset-x-0 z-100 ${isScrolled || isOpen ? "bg-white shadow-2xl backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
     >
       <Container className="flex items-center justify-between py-6">
         <Link
           href="/"
-          className={`font-display text-lg font-semibold tracking-tight ${isScrolled ? "text-[#001C55]" : "text-white"}`}
+          className={`font-display text-lg font-semibold tracking-tight ${isScrolled || isOpen ? "text-[#001C55]" : "text-white"}`}
+          onClick={() => setIsOpen(false)}
         >
           Trading Without Borders
         </Link>
@@ -50,7 +80,8 @@ export default function Header() {
             toggle={setIsOpen}
             size={20}
             rounded
-            color={isScrolled ? "#001C55" : "#FFFFFF"}
+            color={isScrolled || isOpen ? "#001C55" : "#FFFFFF"}
+            label={isOpen ? "Close menu" : "Open menu"}
           />
         </div>
 
@@ -59,7 +90,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-mono text-[12px] uppercase tracking-widest ${isScrolled ? "text-[#001C55]" : "text-white/50 hover:text-white"}`}
+              className={`font-mono text-[12px] uppercase tracking-widest ${isScrolled ? "text-[#001C55] hover:text-[#001C55]/60" : "text-white hover:text-white/60"}`}
             >
               {link.label}
             </Link>
@@ -72,8 +103,37 @@ export default function Header() {
         >
           Book a Strategy Session
         </Button>
-        {/* TODO: mobile menu toggle */}
       </Container>
+
+      {/* Mobile nav panel */}
+      <div
+        className={`fixed z-90 bg-white inset-x-0 top-[88px] xl:hidden overflow-y-auto transition-[max-height,opacity] duration-300 ease-in-out ${
+          isOpen ? "max-h-[calc(100vh-88px)] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <Container className="flex flex-col gap-2 pb-12 pt-6">
+          <nav className="flex flex-col">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="border-b border-[#001C55]/10 py-6 font-display text-4xl font-medium tracking-tight text-[#001C55] transition-colors hover:text-[#001C55]/60"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <Button
+            href="/contact"
+            variant="primary"
+            onClick={() => setIsOpen(false)}
+            className="mt-10 inline-flex justify-center bg-[#001C55] py-4 text-sm text-white"
+          >
+            Book a Strategy Session
+          </Button>
+        </Container>
+      </div>
     </header>
   );
 }
