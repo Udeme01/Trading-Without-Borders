@@ -25,7 +25,7 @@ export default function Card({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-line p-6 py-16 shadow-xs",
+        "group relative overflow-hidden rounded-2xl border border-line p-6 py-16 md:py-32 shadow-xs",
         "transition-all duration-500 ease-out",
         "md:hover:z-20 md:hover:scale-[1.125] md:hover:border-ink",
         "md:hover:shadow-[0_40px_100px_-20px_rgba(0,28,85,0.6)]",

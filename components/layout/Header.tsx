@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { Squash as Hamburger } from "hamburger-react";
@@ -18,11 +19,21 @@ const NAV_LINKS = [
 // a follow-up once Trade Intelligence content exists to search over.
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Only the homepage has a dark hero image behind the header at scroll
+  // position 0. Every other page is light from the top, so the header
+  // should render in its "solid/readable" state immediately on those
+  // pages instead of waiting for a scroll event that may never come.
+  const isHome = pathname === "/";
+  const isScrolled = hasScrolled || !isHome;
 
   useEffect(() => {
+    if (!isHome) return;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setHasScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,7 +41,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isHome]);
 
   // Lock body scroll while the mobile menu is open, and always close it
   // if the viewport grows past the mobile breakpoint (e.g. rotating a
@@ -63,12 +74,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-100 ${isScrolled || isOpen ? "bg-white shadow-2xl backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
+      className={`fixed top-0 inset-x-0 z-100 ${isScrolled || isOpen ? "bg-white shadow-xs backdrop-blur-sm" : "bg-paper/0"} transition-colors`}
     >
       <Container className="flex items-center justify-between py-6">
         <Link
           href="/"
-          className={`font-display text-lg font-semibold tracking-tight ${isScrolled || isOpen ? "text-[#001C55]" : "text-white"}`}
+          className={`font-display text-xl font-medium tracking-tight ${isScrolled || isOpen ? "text-[#001C55]" : "text-white"}`}
           onClick={() => setIsOpen(false)}
         >
           Trading Without Borders

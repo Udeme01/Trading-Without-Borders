@@ -7,7 +7,6 @@ export interface Role {
   opportunities: string[];
   jtbd: string[]; // jobs to be done
   recommendedSolutionSlugs: string[];
-  // add these ↓
   eyebrow?: string;
   heading?: string;
   subheading?: string;
@@ -52,4 +51,10 @@ export interface PodcastEpisode {
   keyInsights: string[];
   relatedArticleSlugs?: string[];
   relatedSolutionSlugs?: string[];
+  // Added — the show is already live on Spotify, so episode audio/video
+  // is embedded from there rather than self-hosted.
+  spotifyUrl?: string; // e.g. https://open.spotify.com/episode/xxxxx
+  quotes?: string[];
+  transcript?: string;
+  resources?: { label: string; url: string }[];
 }

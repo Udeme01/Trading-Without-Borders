@@ -14,10 +14,10 @@ export const metadata: Metadata = buildMetadata({
 // PAGE 2 — DISCOVER (landing)
 export default function DiscoverPage() {
   return (
-    <Container className="py-20">
+    <Container className="py-20 pt-44">
       <p className="meta-label">Discover</p>
       <h1 className="mt-2">Choose your role.</h1>
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {roles.map((role, index) => (
           <RoleCard key={role.slug} role={role} index={index} />
         ))}
