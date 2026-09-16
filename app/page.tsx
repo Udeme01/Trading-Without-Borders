@@ -259,14 +259,16 @@ export default function HomePage() {
       </section>
 
       {/* Section 7 — Why Trading Without Borders? */}
-      <section className="border-b border-line py-20">
+      <section className="border-b border-line py-20 bg-linear-to-b from-[#001C55] to-[#001C55]/80 text-paper">
         <Container>
-          <p className="meta-label">Why Trading Without Borders</p>
+          <p className="meta-label !text-paper/50">
+            Why Trading Without Borders
+          </p>
           <h2 className="mt-2 max-w-2xl">
             Trade advice is easy to find. Trade advice built on both law and
             deals is not.
           </h2>
-          <p className="mt-6 max-w-prose text-ink-60">
+          <p className="mt-6 max-w-prose text-paper/70">
             Most AfCFTA commentary stops at explaining the framework. Trading
             Without Borders exists to close the gap between understanding AfCFTA
             and actually structuring a compliant, defensible move inside it —
@@ -275,7 +277,7 @@ export default function HomePage() {
           </p>
 
           <div className="mt-14">
-            <p className="meta-label mb-4">Credibility</p>
+            <p className="meta-label mb-4 !text-paper/70">Credibility</p>
             <StatStrip
               stats={[
                 {
@@ -291,27 +293,31 @@ export default function HomePage() {
 
           <div className="mt-14 grid gap-10 md:grid-cols-3">
             <div>
-              <span className="meta-label">01</span>
-              <h3 className="mt-3">Law and trade strategy, one practice</h3>
-              <p className="mt-2 text-sm text-ink-60">
+              <span className="meta-label !text-paper/50">01</span>
+              <h3 className="mt-3 text-paper">
+                Law and trade strategy, one practice
+              </h3>
+              <p className="mt-2 text-sm text-paper/70">
                 Most advisors are either lawyers or trade consultants, rarely
                 both. Structuring, compliance, and negotiation come from the
                 same source — nothing gets lost in a handoff between them.
               </p>
             </div>
             <div>
-              <span className="meta-label">02</span>
-              <h3 className="mt-3">AfCFTA-specific, not generalist</h3>
-              <p className="mt-2 text-sm text-ink-60">
+              <span className="meta-label !text-paper/50">02</span>
+              <h3 className="mt-3 text-paper">
+                AfCFTA-specific, not generalist
+              </h3>
+              <p className="mt-2 text-sm text-paper/70">
                 A dedicated podcast and practice built around one framework, not
                 Africa-market advisory in general — depth over breadth on the
                 agreement that actually determines your entry terms.
               </p>
             </div>
             <div>
-              <span className="meta-label">03</span>
-              <h3 className="mt-3">Built on real transactions</h3>
-              <p className="mt-2 text-sm text-ink-60">
+              <span className="meta-label !text-paper/50">03</span>
+              <h3 className="mt-3 text-paper">Built on real transactions</h3>
+              <p className="mt-2 text-sm text-paper/70">
                 Advisory grounded in an active corporate and commercial
                 transactions practice — not a theoretical framework, a record of
                 deals actually structured and closed.
