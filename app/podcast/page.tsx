@@ -41,8 +41,8 @@ export default function PodcastPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10 md:bg-gradient-to-r md:from-black/90 md:via-black/55 md:to-transparent" />
 
         <Container className="relative z-10">
-          <div className="max-w-xl md:max-w-2xl">
-            <p className="meta-label text-white/70 opacity-0 [animation:reveal-up_0.9s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+          <div className="max-w-xl md:max-w-4xl">
+            <p className="font-mono uppercase text-[11px] tracking-widest text-white/70 opacity-0 [animation:reveal-up_0.9s_cubic-bezier(0.16,1,0.3,1)_forwards]">
               An AfCFTA Conversation Series
             </p>
             <h1
@@ -89,7 +89,7 @@ export default function PodcastPage() {
               href={`/podcast/${latest.slug}`}
               className="group mt-6 block rounded-2xl border border-line p-8 transition-colors hover:bg-[#001C55] md:p-12"
             >
-              <p className="meta-label text-ink-60 group-hover:text-paper/70">
+              <p className="font-mono uppercase text-xs tracking-[0.14em] text-ink-60 group-hover:text-paper/70">
                 {new Date(latest.date).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
@@ -115,7 +115,7 @@ export default function PodcastPage() {
         {restEpisodes.length > 0 && (
           <section className="mt-16">
             <h2>All episodes</h2>
-            <div className="mt-8 -mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4 [scrollbar-width:thin]">
+            <div className="mt-8 flex snap-x snap-mandatory overflow-x-auto gap-6 px-6 pb-3 [scrollbar-width:thin]">
               {restEpisodes.map((episode) => (
                 <div
                   key={episode.slug}
