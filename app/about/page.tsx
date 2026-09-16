@@ -21,19 +21,23 @@ export default function AboutPage() {
   return (
     <>
       {/* Intro */}
-      <Container className="pb-16 pt-36">
-        <p className="meta-label">About</p>
-        <h1 className="mt-2 max-w-2xl">
+      <Container className="pb-16 pt-36 min-h-[80vh] flex flex-col items-start justify-center tracking-wide">
+        <p className="font-mono uppercase text-sm tracking-[0.14em] text-ink/70">
+          About
+        </p>
+        <h1 className="mt-4 max-w-full leading-32">
           Advisory built on both law and deals — not one or the other.
         </h1>
       </Container>
 
       {/* Our Story — wide narrative, label column + text column */}
-      <section className="border-t border-line py-20">
+      <section className="border-t border-line py-32 bg-linear-to-b from-[#001C55] to-[#001C55]/80">
         <Container>
           <div className="grid gap-10 md:grid-cols-[200px_1fr]">
-            <p className="meta-label">Our story</p>
-            <div className="max-w-2xl space-y-5 text-ink-60">
+            <p className="font-mono uppercase text-sm tracking-[0.14em] !text-paper/50">
+              Our story
+            </p>
+            <div className="max-w-2xl space-y-5 text-paper/70 font-display text-lg leading-snug tracking-wide">
               <p>
                 Trading Without Borders started from a simple observation: most
                 AfCFTA commentary stops at explaining the framework, and most
@@ -57,14 +61,18 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-14 md:grid-cols-2">
             <div>
-              <p className="meta-label">Mission</p>
+              <p className="font-mono uppercase text-sm tracking-[0.14em] text-ink/70">
+                Mission
+              </p>
               <p className="mt-4 max-w-md font-display text-2xl leading-snug text-[#001C55]">
                 Close the gap between understanding AfCFTA and structuring a
                 compliant, defensible move inside it.
               </p>
             </div>
             <div>
-              <p className="meta-label">Vision</p>
+              <p className="font-mono uppercase text-sm tracking-[0.14em] text-ink/70">
+                Vision
+              </p>
               <p className="mt-4 max-w-md font-display text-2xl leading-snug text-[#001C55]">
                 A continent where every founder, investor, and policymaker
                 trades with the same clarity as the advisors around them.
@@ -79,7 +87,9 @@ export default function AboutPage() {
           otherwise quiet, editorial page. */}
       <section className="bg-linear-to-b from-[#001C55] to-[#001C55]/80 py-24 text-paper">
         <Container>
-          <p className="meta-label !text-paper/50">The philosophy</p>
+          <p className="font-mono uppercase text-sm tracking-[0.14em] !text-paper/50">
+            The philosophy
+          </p>
           <p className="mt-6 max-w-3xl font-display text-3xl italic leading-snug text-paper/95 sm:text-4xl">
             Advice without practice is theory. Practice without advice is luck.
             Neither is good enough for a decision this size.
@@ -156,11 +166,13 @@ export default function AboutPage() {
 
       {/* The Team — honest positioning for a solo-led practice, not an
           empty "Team" heading with nothing under it */}
-      <section className="border-b border-line py-20">
+      <section className="border-b border-line py-32 bg-linear-to-b from-[#001C55] to-[#001C55]/80">
         <Container>
           <div className="grid gap-10 md:grid-cols-[200px_1fr]">
-            <p className="meta-label">The team</p>
-            <p className="max-w-2xl text-ink-60">
+            <p className="font-mono uppercase text-sm tracking-[0.14em] !text-paper/50">
+              The team
+            </p>
+            <p className="max-w-2xl space-y-5 text-paper/70 font-display text-lg leading-snug tracking-wide">
               Trading Without Borders is led directly by Omobola — every
               engagement, every briefing, every structuring decision. No account
               managers, no handoffs to a junior team partway through. As the
@@ -176,15 +188,19 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-14 md:grid-cols-2">
             <div>
-              <p className="meta-label">Partners</p>
-              <p className="mt-4 max-w-md text-ink-60">
+              <p className="font-mono uppercase text-sm tracking-[0.14em] text-ink/70">
+                Partners
+              </p>
+              <p className="mt-4 max-w-md font-display text-2xl leading-snug text-[#001C55]">
                 Partnership details will be added here as formal collaborations
                 are announced.
               </p>
             </div>
             <div>
-              <p className="meta-label">Media</p>
-              <p className="mt-4 max-w-md text-ink-60">
+              <p className="font-mono uppercase text-sm tracking-[0.14em] text-ink/70">
+                Media
+              </p>
+              <p className="mt-4 max-w-md font-display text-2xl leading-snug text-[#001C55]">
                 Press mentions and media coverage will be added here as they
                 come in.
               </p>
@@ -197,9 +213,11 @@ export default function AboutPage() {
       <section className="py-20">
         <Container>
           <div className="grid gap-10 md:grid-cols-[200px_1fr] md:items-center">
-            <p className="meta-label">Speaking</p>
+            <p className="font-mono uppercase text-sm tracking-[0.14em] text-ink/70">
+              Speaking
+            </p>
             <div className="flex flex-wrap items-center justify-between gap-6">
-              <p className="max-w-md text-ink-60">
+              <p className="mt-4 max-w-md font-display text-2xl leading-snug text-[#001C55]">
                 Available for talks, panels, and training sessions on AfCFTA and
                 African trade strategy.
               </p>
