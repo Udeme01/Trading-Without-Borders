@@ -21,7 +21,7 @@ export default function HomePage() {
   const featuredEpisodes = getFeaturedEpisodes(3);
   return (
     <>
-      <Hero
+      {/* <Hero
         eyebrow={
           <>
             <span className="text-white/50 text-[10px]">
@@ -36,6 +36,41 @@ export default function HomePage() {
           href: "/trade-intelligence",
           label: "Explore Trade Intelligence",
         }}
+      /> */}
+
+      <Hero
+        slides={[
+          {
+            eyebrow: "Trading Without Borders",
+            headline: "Africa is open for business. Are you ready to move?",
+            supporting:
+              "Advisory, market intelligence, and trade education for the people building Africa's next chapter.",
+            image: "/images/africa01.jpg",
+            primaryCta: { href: "/contact", label: "Book a Strategy Session" },
+            secondaryCta: {
+              href: "/trade-intelligence",
+              label: "Explore Trade Intelligence",
+            },
+          },
+          {
+            eyebrow: "Market Intelligence",
+            headline:
+              "Data-driven insight into Africa's fastest-moving markets.",
+            supporting:
+              "Real-time trade data, tariffs, and risk signals in one place.",
+            image: "/images/market-intelligence.jpg",
+            primaryCta: { href: "/solutions", label: "See Our Solutions" },
+          },
+          {
+            eyebrow: "Trade Education",
+            headline:
+              "Learn how the world's next trade corridors actually work.",
+            supporting:
+              "Courses and briefings built for operators, not spectators.",
+            image: "/images/trade-education.jpg",
+            primaryCta: { href: "/discover", label: "Start Learning" },
+          },
+        ]}
       />
 
       {/* Section 2 — Africa Is Changing */}
