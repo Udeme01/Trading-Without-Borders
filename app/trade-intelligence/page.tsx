@@ -23,7 +23,7 @@ const FILTERS = ["Country", "Industry", "Topic", "Audience", "Date"];
 // search + filters against it.
 export default function TradeIntelligencePage() {
   return (
-    <Container className="py-20">
+    <Container className="py-20 pt-44">
       <p className="meta-label">Trade Intelligence</p>
       <h1 className="mt-2">The knowledge hub.</h1>
 
