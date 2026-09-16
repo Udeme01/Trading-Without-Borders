@@ -130,7 +130,7 @@ export default function AboutPage() {
                 structured and closed, not a theoretical read of the framework.
               </p>
 
-              <div className="mt-10">
+              <div className="mt-10 bg-linear-to-b from-[#001C55] to-[#001C55]/80 p-4 rounded-2xl">
                 <StatStrip
                   stats={[
                     {

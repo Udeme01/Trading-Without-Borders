@@ -8,8 +8,10 @@ export default function StatStrip({ stats }: { stats: Stat[] }) {
     <dl className="grid grid-cols-2 gap-8 border-y border-line py-10 sm:grid-cols-4">
       {stats.map((stat) => (
         <div key={stat.label}>
-          <dt className="meta-label !text-paper/50">{stat.label}</dt>
-          <dd className="mt-2 font-display text-3xl font-medium md:text-4xl">
+          <dt className="font-mono uppercase text-[11px] text-paper/50 tracking-wider w-full">
+            {stat.label}
+          </dt>
+          <dd className="mt-2 font-display text-3xl font-medium md:text-2xl text-paper">
             {stat.value}
           </dd>
         </div>
