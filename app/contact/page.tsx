@@ -23,9 +23,9 @@ const OPTIONS = [
 // funnel into one form with a "reason" select — sitemap doesn't specify.
 export default function ContactPage() {
   return (
-    <Container className="py-20">
+    <Container className="py-20 pt-44">
       <h1>How can we help?</h1>
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-6 md:gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-">
         {OPTIONS.map((opt) => (
           <Card key={opt.slug} href={`/contact#${opt.slug}`} title={opt.label} />
         ))}
