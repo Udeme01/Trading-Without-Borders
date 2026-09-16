@@ -42,7 +42,7 @@ export default function PodcastPage() {
 
         <Container className="relative z-10">
           <div className="max-w-xl md:max-w-4xl">
-            <p className="font-mono uppercase text-[11px] tracking-widest text-white/70 opacity-0 [animation:reveal-up_0.9s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+            <p className="font-mono uppercase text-[10px] mb-4 tracking-widest text-white/70 opacity-0 [animation:reveal-up_0.9s_cubic-bezier(0.16,1,0.3,1)_forwards]">
               An AfCFTA Conversation Series
             </p>
             <h1

@@ -5,14 +5,23 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Trade Intelligence",
-  description: "Articles, reports, trade briefs, and country intelligence on African trade.",
+  description:
+    "Articles, reports, trade briefs, and country intelligence on African trade.",
   path: "/trade-intelligence",
 });
 
 const CATEGORIES = [
-  "Articles", "Reports", "Trade Briefs", "Country Intelligence",
-  "Industry Intelligence", "Guides", "Toolkits", "White Papers",
-  "Policy Explained", "Case Studies", "FAQs",
+  "Articles",
+  "Reports",
+  "Trade Briefs",
+  "Country Intelligence",
+  "Industry Intelligence",
+  "Guides",
+  "Toolkits",
+  "White Papers",
+  "Policy Explained",
+  "Case Studies",
+  "FAQs",
 ];
 
 const FILTERS = ["Country", "Industry", "Topic", "Audience", "Date"];
@@ -24,8 +33,12 @@ const FILTERS = ["Country", "Industry", "Topic", "Audience", "Date"];
 export default function TradeIntelligencePage() {
   return (
     <Container className="py-20 pt-44">
-      <p className="meta-label">Trade Intelligence</p>
-      <h1 className="mt-2">The knowledge hub.</h1>
+      <p className="font-mono uppercase tracking-[0.14em] text-ink/70 mb-4 text-[10px]">
+        Trade Intelligence
+      </p>
+      <h1 className="max-w-4xl font-bold text-3xl md:text-6xl">
+        The knowledge hub.
+      </h1>
 
       {/* TODO: search input */}
 

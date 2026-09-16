@@ -15,8 +15,12 @@ export const metadata: Metadata = buildMetadata({
 export default function SolutionsPage() {
   return (
     <Container className="py-20 pt-44">
-      <p className="meta-label">Solutions</p>
-      <h1 className="mt-2">Demonstrate outcomes, not services.</h1>
+      <p className="font-mono uppercase tracking-[0.14em] text-ink/70 mb-4 text-[10px]">
+        Solutions
+      </p>
+      <h1 className="max-w-full font-bold text-3xl md:text-6xl">
+        Demonstrate outcomes, not services.
+      </h1>
       <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
         {solutions.map((solution) => (
           <Card
