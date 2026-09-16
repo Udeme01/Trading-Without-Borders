@@ -387,7 +387,7 @@ export default function HomePage() {
               </Button>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-10 overflow-visible px-4 sm:grid-cols-2 sm:px-8">
+            <div className="mt-10 grid grid-cols-1 gap-10 overflow-visible sm:grid-cols-2">
               {featuredArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />
               ))}
