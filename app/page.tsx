@@ -243,7 +243,7 @@ export default function HomePage() {
         <Container>
           <p className="meta-label">How we move you forward</p>
           <h2 className="mt-2">Solutions</h2>
-          <div className="mt-10 grid grid-cols-1 gap-10 overflow-visible px-4 sm:grid-cols-2 sm:gap-16 sm:px-8">
+          <div className="mt-10 grid grid-cols-1 gap-10 overflow-visible sm:grid-cols-2 sm:gap-16 w-full">
             {solutions.map((solution) => (
               <Card
                 key={solution.slug}

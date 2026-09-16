@@ -29,7 +29,7 @@ export default function PodcastPage() {
       {/* Hero — full-bleed host photo, dark on the left where the text
           sits, fading to fully visible on the right. Same treatment as
           the Discover role pages. */}
-      <section className="relative isolate flex min-h-[80vh] items-end overflow-hidden pb-16 pt-32 md:items-center md:pb-0">
+      <section className="relative isolate flex min-h-[90vh] items-end overflow-hidden pb-16 pt-32 md:items-center md:pb-0">
         <Image
           src="/images/omobola-adekola.jpeg"
           alt=""
