@@ -75,7 +75,7 @@ export default function Hero({ slides, intervalMs = 6000 }: HeroProps) {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             {slide.eyebrow && (
-              <p className="meta-label mb-4">{slide.eyebrow}</p>
+              <p className="font-mono uppercase text-xs tracking-[0.14em] text-paper/70 mb-4">{slide.eyebrow}</p>
             )}
             <h1 className="max-w-6xl font-bold text-3xl md:text-6xl text-white">
               {slide.headline}

@@ -21,22 +21,7 @@ export default function HomePage() {
   const featuredEpisodes = getFeaturedEpisodes(3);
   return (
     <>
-      {/* <Hero
-        eyebrow={
-          <>
-            <span className="text-white/50 text-[10px]">
-              Trading Without Borders
-            </span>
-          </>
-        }
-        headline="Africa is open for business. Are you ready to move?"
-        supporting="Advisory, market intelligence, and trade education for the people building Africa's next chapter."
-        primaryCta={{ href: "/contact", label: "Book a Strategy Session" }}
-        secondaryCta={{
-          href: "/trade-intelligence",
-          label: "Explore Trade Intelligence",
-        }}
-      /> */}
+      
 
       <Hero
         slides={[
@@ -119,7 +104,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-14">
+          <div className="mt-14 bg-linear-to-b from-[#001C55] to-[#001C55]/80 p-4 rounded-2xl p-3">
             <StatStrip
               stats={[
                 { value: "54", label: "Countries in the agreement" },
@@ -128,7 +113,7 @@ export default function HomePage() {
                 { value: "16%", label: "Pre-AfCFTA intra-African trade share" },
               ]}
             />
-            <p className="mt-4 text-sm text-ink-40 tracking-wide">
+            <p className="mt-4 text-sm text-paper/70 tracking-wider">
               Compare: intra-regional trade sits at roughly 59% in Asia and 68%
               in Europe — the gap AfCFTA is built to close.
             </p>
