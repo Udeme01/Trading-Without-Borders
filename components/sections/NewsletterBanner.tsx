@@ -10,7 +10,7 @@ export default function NewsletterBanner() {
           <p className="uppercase text-xs tracking-[0.14em] text-white/60">
             Africa Trade Brief
           </p>
-          <h3 className="mt-2 text-white md:text-xl">
+          <h3 className="mt-2 text-white md:text-3xl">
             Trade intelligence, in your inbox.
           </h3>
         </div>
@@ -20,7 +20,7 @@ export default function NewsletterBanner() {
             type="email"
             required
             placeholder="you@company.com"
-            className="w-full border-none bg-paper px-4 py-3 text-sm outline-none rounded-md"
+            className="w-full border-none bg-paper px-4 py-3 text-lg outline-none rounded-md font-display tracking-wider"
           />
           <button
             type="submit"

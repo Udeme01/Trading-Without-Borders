@@ -54,7 +54,7 @@ h2 {
 }
 
 h3 {
-  @apply font-display font-medium text-[clamp(1.25rem,2vw,1.75rem)] leading-tight;
+  @apply font-display font-medium text-[clamp(1.35rem,2vw,1.9rem)] leading-tight;
 }
 
 p {
